@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from api import courses
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="LMS API",
@@ -8,6 +9,15 @@ app = FastAPI(
     docs_url="/docs",  # Default Swagger UI path
     redoc_url="/redoc",  # Default ReDoc UI path
     openapi_url="/openapi.json",  # OpenAPI JSON schema
+)
+
+# Enable CORS for frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins (for development, limit this in production)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 @app.get("/")
