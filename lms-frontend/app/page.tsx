@@ -1,4 +1,12 @@
+"use client"; // Ensures this runs only on the client side
+
+import { useEffect } from "react";
+
 export default function Home() {
+  useEffect(() => {
+    document.title = "LMS - Home"; // Dynamically set the page title
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-900 p-8">
       <h1 className="text-4xl font-bold">Welcome to LMS</h1>

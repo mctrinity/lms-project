@@ -98,6 +98,24 @@ export default function Courses() {
 
 ---
 
+## 🔥 Troubleshooting
+### **Hydration Error in Chrome?**
+If you see this error:
+```
+Hydration failed because the server rendered HTML didn't match the client.
+```
+🔹 **Possible Cause:** The React Developer Tools Chrome extension.
+
+### **🛠️ Fix:**
+1. Open Chrome
+2. Go to **Extensions Page** (`chrome://extensions/`)
+3. **Disable "React Developer Tools"**
+4. Restart Chrome and reload the page
+
+✅ The error should be gone!
+
+---
+
 ## 📌 Authentication (Planned)
 - **Login & Signup pages** using NextAuth.js
 - **JWT Authentication** with FastAPI backend
